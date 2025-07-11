@@ -22,6 +22,12 @@ const projets = [
     }
 ];
 
+export function generateStaticParams() {
+  return projets.map((projet) => ({
+    id: projet.id.toString(),
+  }));
+}
+
 export default function ProjetDetail({ params }) {
     const id = parseInt(params.id);
     const projet = projets.find((p) => p.id === id);
