@@ -19,25 +19,33 @@ export default function Projets() {
         }
     ];
 
-   return (
+    return (
     <div className="container py-5 text-light">
       <h1 className="mb-4">MES PROJETS</h1>
       <div className="row">
         {projets.map((projet) => (
           <div className="col-md-6 mb-4" key={projet.id}>
-            <Link href={`/projets/${projet.id}`} className="text-decoration-none">
-              <div className="card p-4 bg-dark text-light h-100">
-                <h5>{projet.titre}</h5>
-                <p>{projet.description}</p>
-                <strong>Technologies : </strong>
-                <ul>
-                  {projet.techno.map((techno) => (
-                    <li key={techno}>{techno}</li>
-                  ))}
-                </ul>
-              </div>
-            </Link>
+          <div className="card p-4 bg-dark text-light h-100 d-flex flex-column">
+            <h5 className="mb-2">{projet.titre}</h5>
+            <p className="mb-3">{projet.description}</p>
+
+            <strong>Technologies :</strong>
+            <ul className="mb-4">
+              {projet.techno.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+
+            <div className="mt-auto d-flex justify-content-end">
+              <Link
+                href={`/projets/${projet.id}`}
+                className="btn btn-outline-info btn-sm rounded-pill"
+              >
+                Voir plus →
+              </Link>
+            </div>
           </div>
+        </div>
         ))}
       </div>
     </div>

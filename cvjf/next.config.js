@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   output: 'export',
-  basePath: '/CVJF',
-  images: {
-    unoptimized: true
-  },
-  trailingSlash: true 
-}
+  basePath: isProd ? '/CVJF' : '',
+  assetPrefix: isProd ? '/CVJF/' : '',
+  images: { unoptimized: true },
+  trailingSlash: true,
+};
+
 module.exports = nextConfig;

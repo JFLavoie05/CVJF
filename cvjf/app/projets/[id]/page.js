@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-
+const prefix = process.env.NODE_ENV === 'production' ? '/CVJF' : '';
 const projets = [
     {
         id: 1,
@@ -9,14 +9,14 @@ const projets = [
         techno: ["ASP.NET Core", "React", "Next.js", "API REST", "Bootstrap", "Stripe"],
         lien: ["https://github.com/JFLavoie05/Projet-Prog4", "https://github.com/JFLavoie05/Projet-WEB3"],
         images: [""],
-        video: "/VideoProjetBoutique.mp4" 
+        youtubeId: "v6K9ck548to"
     },
     {
         id: 2,
         titre: "Col Net (site web) en Blazor",
         description: "Un site web immitant un site officiel d'une école ou d'un établissement produit en Blazor.",
-        text : "Dans ce projet, mon coéquipier et moi avions la tâche de faire une application en utilisant Blazor. Ce projet a été particulièrement difficile, car nous devions apprendre Blazor, une manière de travailler que nous n'avions jamais fait auparavant. De plus, notre professeur refusait de nous aider et nous poussait à faire nos propres recherches, ce qui a grandement favorisé notre autonomie.",
-        techno: ["Blazor", "MySQL, Linq"],
+        text : "Dans ce projet, mon coéquipier et moi avons développé une application web en Blazor, imitant le site officiel d’un établissement scolaire. Ce fut un défi particulier, car nous devions apprendre à utiliser Blazor, une technologie que nous n’avions jamais abordée auparavant. L’absence d’assistance directe de notre professeur nous a poussés à effectuer nos propres recherches, ce qui a renforcé notre autonomie et notre capacité à résoudre des problèmes de manière indépendante. Durant le projet, nous avions également à construire notre propre base de donnés de A - Z et d'ensuite faire les différentes requêtes LinQ que nous avions besoins.",
+        techno: ["Blazor", "MySQL, LinQ"],
         lien: "https://github.com/DICJ/projet-colnet-jean-felix_jean-olivier_prog3",
         images: [""]
     }
@@ -72,14 +72,18 @@ export default function ProjetDetail({ params }) {
                 </>
             )}
 
-            {projet.video && (
-            <div className="mt-4">
+            {projet.youtubeId && (
+                <div className="mt-4">
                 <h4>Vidéo de démonstration :</h4>
-                <video controls className="w-100 rounded border mt-2">
-                    <source src={projet.video} type="video/mp4" />
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-            </div>
+                <div className="ratio ratio-16x9 mt-2 rounded border overflow-hidden">
+                <iframe
+                    src={`https://www.youtube.com/embed/${projet.youtubeId}?rel=0&modestbranding=1`}
+                    title={`YouTube ${projet.titre}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                />
+                </div>
+                </div>
             )}
         </div>
     );

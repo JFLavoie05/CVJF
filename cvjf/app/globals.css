@@ -1,3 +1,28 @@
+/* mobile d’abord */
+.nav-header {
+  display: flex;
+  flex-wrap: wrap;          
+  gap: .75rem;              
+  justify-content: center;  
+  padding: .75rem 1rem;
+}
+
+.nav-header .nav-link {
+  font-size: 1rem;          
+  padding: .25rem .5rem;
+}
+
+/* à partir de md, on remet large */
+@media (min-width: 768px) {
+  .nav-header .nav-link {
+    font-size: 1.15rem;
+  }
+  .nav-header {
+    gap: 2rem;
+  }
+}
+
+
 body {
   background: radial-gradient(circle at top center, #121212, #000);
   color: #f1f1f1;
