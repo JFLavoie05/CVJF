@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "build": "next build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d out --dotfiles"
-},
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out --dotfiles"
+  },
   "dependencies": {
     "bootstrap": "^5.3.7",
     "next": "15.3.5",

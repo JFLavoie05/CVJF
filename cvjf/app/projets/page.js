@@ -20,32 +20,45 @@ export default function Projets() {
     ];
 
     return (
-    <div className="container py-5 text-light">
-      <h1 className="mb-4">MES PROJETS</h1>
-      <div className="row">
-        {projets.map((projet) => (
+    <div className="container py-5 text-light" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="text-center mb-5">
+        <h2 className="projects-title">MES PROJETS</h2>
+        <p className="lead" style={{ color: '#b0b0b0', maxWidth: '600px', margin: '0 auto' }}>
+          Découvrez mes réalisations et les technologies que j'ai utilisées
+        </p>
+      </div>
+      <div className="row g-4">
+        {projets.map((projet, index) => (
           <div className="col-md-6 mb-4" key={projet.id}>
-          <div className="card p-4 bg-dark text-light h-100 d-flex flex-column">
-            <h5 className="mb-2">{projet.titre}</h5>
-            <p className="mb-3">{projet.description}</p>
+            <div className="project-card h-100 d-flex flex-column" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="project-card-header">
+                <h3 className="project-title">{projet.titre}</h3>
+              </div>
 
-            <strong>Technologies :</strong>
-            <ul className="mb-4">
-              {projet.techno.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
+              <p className="project-description">{projet.description}</p>
 
-            <div className="mt-auto d-flex justify-content-end">
-              <Link
-                href={`/projets/${projet.id}`}
-                className="btn btn-outline-info btn-sm rounded-pill"
-              >
-                Voir plus →
-              </Link>
+              <div className="tech-section">
+                <span className="tech-label">Technologies</span>
+                <div className="tech-tags">
+                  {projet.techno.map((t) => (
+                    <span key={t} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-auto pt-3">
+                <Link
+                  href={`/projets/${projet.id}`}
+                  className="project-link"
+                >
+                  <span>Voir plus</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
         ))}
       </div>
     </div>

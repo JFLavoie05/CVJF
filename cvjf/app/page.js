@@ -5,7 +5,7 @@ export default function Home() {
     <main className="home d-flex flex-column justify-content-center align-items-center text-center min-vh-100">
       <div className="profile-container mb-4">
         <Link href="/contact">
-        <img src="/CVJF/images/jf.jpg" alt="Jean-Félix Lavoie" className="profile-img" />
+        <img src="/images/Photo JF 1.jpg" alt="Jean-Félix Lavoie" className="profile-img" />
         </Link>
       </div>
 
