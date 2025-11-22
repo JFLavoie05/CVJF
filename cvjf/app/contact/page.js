@@ -1,5 +1,7 @@
 "use client"
 
+const basePath = process.env.NODE_ENV === 'production' ? '/CVJF' : '';
+
 export default function Contact() {
   return (
     <div className="container text-light py-5" style={{ position: 'relative', zIndex: 1 }}>
@@ -14,7 +16,7 @@ export default function Contact() {
         <div className="contact-content">
           <div className="contact-cta">
             <a
-              href="/CV_JeanFelix_Lavoie_2025.pdf"
+              href={`${basePath}/CV_JeanFelix_Lavoie_2025.pdf`}
               download
               className="cv-download-btn"
             >
@@ -44,7 +46,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="contact-social-card linkedin-card"
             >
-              <img src="/images/linkedin.png" alt="LinkedIn" className="contact-icon" />
+              <img src={`${basePath}/images/linkedin.png`} alt="LinkedIn" className="contact-icon" />
               <div className="social-card-info">
                 <h4>LinkedIn</h4>
                 <p>Réseau professionnel</p>
@@ -57,7 +59,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="contact-social-card github-card"
             >
-              <img src="/images/github.png" alt="GitHub" className="contact-icon" />
+              <img src={`${basePath}/images/github.png`} alt="GitHub" className="contact-icon" />
               <div className="social-card-info">
                 <h4>GitHub</h4>
                 <p>Projets et code</p>
@@ -68,7 +70,7 @@ export default function Contact() {
               href="mailto:jeanfelix.lavoie@hotmail.com"
               className="contact-social-card email-card"
             >
-              <img src="/images/email.png" alt="Email" className="contact-icon" />
+              <img src={`${basePath}/images/email.png`} alt="Email" className="contact-icon" />
               <div className="social-card-info">
                 <h4>Email</h4>
                 <p>Contact direct</p>
