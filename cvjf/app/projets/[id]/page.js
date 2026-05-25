@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-const prefix = process.env.NODE_ENV === 'production' ? '/CVJF' : '';
 const projets = [
     {
         id: 1,

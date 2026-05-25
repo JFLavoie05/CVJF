@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(npm run deploy:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nModernisation complète du portfolio avec design glassmorphism\n\n- Ajout d''animations et gradients modernes\n- Navigation glassmorphism avec effets blur\n- Page d''accueil avec cercle de profil animé\n- Pages compétences, projets et contact modernisées\n- Ajout de la photo de profil\n- Correction des chemins d''images pour GitHub Pages\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
