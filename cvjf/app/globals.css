@@ -697,6 +697,106 @@ p {
 }
 
 /* Projects Page Styles */
+.project-card-featured {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 198, 255, 0.2);
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  box-shadow:
+    0 8px 32px rgba(0, 198, 255, 0.1),
+    0 0 0 1px rgba(0, 198, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #9333ea);
+}
+
+.project-card-featured:hover {
+  border-color: rgba(0, 198, 255, 0.4);
+  box-shadow:
+    0 16px 48px rgba(0, 198, 255, 0.2),
+    0 0 0 1px rgba(0, 198, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.featured-accent {
+  display: none;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+}
+
+.project-badge-client {
+  background: rgba(147, 51, 234, 0.15);
+  border: 1px solid rgba(147, 51, 234, 0.4);
+  color: #c084fc;
+}
+
+.project-badge-live {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  display: inline-block;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.project-badge-academic {
+  background: rgba(0, 198, 255, 0.1);
+  border: 1px solid rgba(0, 198, 255, 0.25);
+  color: #67e8f9;
+}
+
+.project-badge-stage {
+  background: rgba(251, 146, 60, 0.12);
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  color: #fb923c;
+}
+
+.project-link-primary {
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.2), rgba(0, 114, 255, 0.2));
+  border-color: rgba(0, 198, 255, 0.5) !important;
+  color: #00c6ff !important;
+}
+
+.project-link-primary:hover {
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.35), rgba(0, 114, 255, 0.35)) !important;
+  box-shadow: 0 0 28px rgba(0, 198, 255, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
 .projects-title {
   font-size: 3rem;
   font-weight: 800;
@@ -855,6 +955,101 @@ p {
 
 .project-link:hover svg {
   transform: translateX(4px);
+}
+
+/* Project Detail Page */
+.projet-detail-page {
+  min-height: 100vh;
+}
+
+.projet-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+  margin-bottom: 2.5rem;
+}
+
+.projet-back-link:hover {
+  color: #ffffff;
+  border-color: rgba(0, 198, 255, 0.3);
+  background: rgba(0, 198, 255, 0.05);
+  transform: translateX(-3px);
+}
+
+.projet-detail-header {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.projet-detail-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #00c6ff 60%, #9333ea 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.projet-detail-desc {
+  font-size: 1.15rem;
+  color: #b0b0b0;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+.projet-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .projet-detail-grid {
+    grid-template-columns: 1fr 320px;
+    align-items: start;
+  }
+}
+
+.projet-detail-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.projet-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #00c6ff;
+  margin: 0 0 0.25rem 0;
+}
+
+.projet-detail-text {
+  font-size: 1.05rem;
+  color: #d0d0d0;
+  line-height: 1.8;
+  margin: 0.75rem 0 0;
+}
+
+.projet-video {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
 }
 
 /* Smooth Scrolling */

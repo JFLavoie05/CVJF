@@ -10,7 +10,7 @@ export default function Home() {
       </div>
 
       <h1 className="display-3 fw-bold text-white">Jean-Félix Lavoie</h1>
-      <p className="fs-5">Finissant en technique de l'informatique</p>
+      <p className="fs-5">Diplomé en technique de l'informatique</p>
     </main>
   );
 }

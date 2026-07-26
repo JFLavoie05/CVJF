@@ -14,7 +14,7 @@ export default function Contact() {
         <div className="contact-content">
           <div className="contact-cta">
             <a
-              href={"/CV_JeanFelix_Lavoie_2025.pdf"}
+              href={"/CV_JeanFelix_Lavoie_2026.pdf"}
               download
               className="cv-download-btn"
             >
